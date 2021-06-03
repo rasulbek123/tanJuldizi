@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close)
         drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()gi
+        toggle.syncState()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
