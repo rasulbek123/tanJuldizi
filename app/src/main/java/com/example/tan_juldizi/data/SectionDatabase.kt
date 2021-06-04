@@ -11,18 +11,17 @@ import com.example.tan_juldizi.data.model.Section
 abstract class SectionDatabase: RoomDatabase() {
     companion object {
         private lateinit var INSTANCE: SectionDatabase
-        fun getInstance(context: Context): SectionDatabase {
-            if (!Companion::INSTANCE.isInitialized) {
-                INSTANCE = Room.databaseBuilder(
-                    context,
-                    SectionDatabase::class.java,
-                    "Tan_Juldiz"
-                ).createFromAsset("Tan_Juldiz")
-                    .allowMainThreadQueries()
-                    .build()
-            }
-            return INSTANCE
-        }
+        fun getInstance(context: Context): SectionDatabase =
+            Room.databaseBuilder(
+                context,
+                SectionDatabase::class.java,"Tan_Juldiz.db"
+
+            )   .createFromAsset("Tan_Juldiz.db")
+                .allowMainThreadQueries()
+                .build()
+
     }
+
+
     abstract fun dao(): SectionDao
 }
