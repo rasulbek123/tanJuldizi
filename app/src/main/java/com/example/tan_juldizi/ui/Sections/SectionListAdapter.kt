@@ -17,9 +17,12 @@ class SectionListAdapter:RecyclerView.Adapter<SectionListAdapter.SectionViewHold
     inner class SectionViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         fun populeatmodel(section:Section){
         itemView.sectionName.text = section.name
+        itemView.setOnClickListener {
+            onItemClicked.invoke(section)
+        }
         }
     }
-
+    var onItemClicked:(section:Section)->Unit = {}
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home,parent,false)
         return SectionViewHolder(itemView)
