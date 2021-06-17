@@ -16,13 +16,6 @@ import kotlinx.android.synthetic.main.content_main.*
 import java.security.Security
 
 class MainActivity : AppCompatActivity() {
-    companion object{
-        const val TYPE_ID = "typeId"
-        const val SONETLER = 1
-        const val GAZELLER = 2
-        const val RUBAYILAR = 3
-        const val ULLI = 4
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
